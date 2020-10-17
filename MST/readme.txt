@@ -1,6 +1,6 @@
 The functions for the static MST (ComputeMST) and dynamic MST (RecomputeMST) are implemented in the wrapper. 
 
-Files contained in the folder MST:
+Files contained in the current folder MST:
 1, data: contains all the 13 input graphs
 2, results: to store the outputs
 3, src: includes all the python file needed
