@@ -58,8 +58,8 @@ Show that Dominating Set is NP-complete. Follow all steps we have outlined in cl
 A potential solution would be $L_k = [v_1, v_2, ..., v_k]$, which is a list of $k$ vertices in the graph $G$ that was placed a copy of the database. To check if $L_k$ is a correct solution, we can loop through all the vertices in the $L_k$, store their neighbors in a hashset, and then check if the hashset has a length equal to $|V|$, the number of vertices in $G$. If we use a hashset to store $L_k$, then the worst runtime for checking a potential solution is $O(k|E|)$, where $E$ is the number of edges in $G$. Therefore, {\em Dominating Set Problem} is in NP. 
 
 \item Step 2: Choose an NP-complete problem X.\\
-{\em Set Cover: Given a set $U$ of elements, a collection $S_1, S_2, ..., S_m$ of subsets of $U$, and an integer $k$, dose there exist a collection of $\leq k$ of these sets whose union is equal to $U$? }\\ 
-We know the {\em Set Cover} problem is NP-complete. 
+{\em Vertex Cover: Given a graph $G = (V, E)$ and an integer $k$, dose there exist a subset of vertices $S \subseteq V$ with $|S| \leq k$ such that each edge in $E$ has at least one endpoint in $X$? }\\ 
+We know the {\em Vertex Cover} problem is NP-complete. 
 \end{itemize}
 \end{tcolorbox}
 
@@ -67,8 +67,13 @@ We know the {\em Set Cover} problem is NP-complete.
 \begin{itemize}
 \item Step 3: Prove that  {\em Vertex Cover}  $ \leq_{p}$ {\em Dominating Set}.
 \begin{itemize}
-\item Given a 
+\item Given a {\em Vertex Cover} instance  $G = (V, E)$ and $k$, we construct a {\em Dominating Set} instance $G' = (V', E')$ and $k'$ that has a dominating set of size $k'$ iff $G$ has a vertex cover of size $k$. For each edge $e = (a,b)$ in $E$, it has at least one endpoint in $S$. We add a new vertex $v_{ab}$ between vertices $a$ and $b$ and connecting them with edges, i.e., we add two new edges $(a, v_{ab})$ and $(v_{ab}, b)$. In this way, we constructed our new graph $G' = (V', E')$. Also, note that if $G$ has isolated vertices $I = \{ v_i \in V | v_i \text{ is isolated in } G\}$, then these isolated vertices will not be included in a cover set of $G$ since they don't belong to any edge. However, a dominating set in $G$ will have to contain all the isolated vertices since there is no way for them to have a neighbor in the dominating set. Therefore, we need to set $k' = k + |I|$. Obviously, reducing an instance of {\em Vertex Cover} to an instance of {\em Dominating Set} only requires a time complexity of $O(|E|)$. Now we are ready to prove that $G = (V, E)$ has a cover set of size $k$ iff $G' = (V', E')$ has a dominating set of size $k'$.
+
+\item "$\Rightarrow$" Let $X \subseteq V$ be a vertex cover of size $k$ in $G$. Then  $X \cup I $ is a dominating set of size $k'$ in $G'$. To show this, we prove by contradiction. Since $X \cup I $ has size $k'$ and every vertex in $I$ is for sure in the dominating set $X \cup I$. So the only way for $X \cup I $ not to be a dominating set in $G'$ is that there exists some vertex $u$ in $V' - I$ such that $u \notin X$ and all the neighbors of $u$ are also not in $X$. The way $G'$ was constructed ensures that $u$ has at least one neighbor $v \in V$. If  $u \in V$, then the edge $(u, v)$ is not covered by $X$, which contradicts with the fact that $X$ is a vertex cover in $G$. If $u \notin V$, then $u$ was added between two vertices $a, b \in V$, which means $u$ has only two neighbors $a$ and $b$ and neither $a$ nor $b$ are in $X$. Since there is an edge between $a$ and $b$ in $G$, we know this edge is not covered by $X$. Again, we get the contradiction. So $X \cup I $ is a dominating set of size $k'$ in $G'$. 
+
+\item "$\Leftarrow$" Let  $X \cup I $ be a dominating set of size $k'$ in $G'$. If $X$ is not a vertex cover set of $G$, then there exists an edge $(a,b) \in E$ such that $a \notin X$ and $b \notin X$. Then the vertex $v_{ab}$ added between $a$ and $b$ dose not has a neighbor in $X \cup I$, which contradicts with the fact that $X \cup I$ is a dominating set in $G'$.
 \end{itemize}
+This completes the proof of {\em Vertex Cover}  $ \leq_{p}$ {\em Dominating Set}.
 \end{itemize}
 \end{tcolorbox}
 
@@ -79,7 +84,24 @@ Assume you are planning a dinner party and going to invite a set of friends. How
 You can use the fact that \texttt{Hamiltonian Cycle (HC)} is NP-complete.
 
 \begin{tcolorbox}
-{\bf Solution:}
+{\bf Solution:} 
+\begin{itemize}
+\item Step 1: Show that \texttt{Frenemies} is in NP.\\
+A potential solution would be $L = \{a_1, a_2, ..., a_n\}$, which should be a permutation of numbers $1,2, ..., n$.  To check if $L$ is a correct solution, we can loop through $L$ and check if the numbers in $L$ are unique using a hashset and if $(a_i, a_{(i+1)\%n})$ is in the set of the pairs of enemies. This procedure takes $O(n)$ time.
+
+\item Step 2: Choose an NP-complete problem: \texttt{Hamiltonian Cycle}.\\
+\texttt{Hamiltonian Cycle}: Given an undirected graph $G = (V, E)$, does there exist a simple cycle that contains every node in $V$?
+
+\item Step 3: Prove that \texttt{Hamiltonian Cycle} $\leq _{p}$ \texttt{Frenemies}.
+\begin{itemize}
+\item Given a \texttt{Hamiltonian Cycle} instance $G = (V, E)$, we construct a \texttt{Frenemies} instance. Suppose there are $n$ vertices in $G$, we consider $n$ friends in \texttt{Frenemies}. For each edge $(i,j)$ missing in $G$, i.e.,  $(i,j) \in E_c$, we construct a pair of enemies $(i, j)$ in \texttt{Frenemies}. Since there are $\frac {n(n-1)}{2}$ in a complete graph with $n$ vertices, the procedure of constructing all the pairs of enemies takes polynomial time. Now suppose $v_1, v_2, ..., v_n, v_1$ is a Hamiltonian Cycle of $G$, we can construct a solution to \texttt{Frenemies} be arranging the friends in the order of $v_1, v_2, ..., v_n, v_1$ around a table. This takes linear time. Now we are ready to prove that the two problems are equivalent. 
+
+\item "$\Rightarrow$" Suppose $v_1, v_2, ..., v_n, v_1$ is a Hamiltonian Cycle of $G$, then arranging friends in the order of $v_1, v_2, ..., v_n, v_1$ around a table avoids two enemies sitting next to each other. Suppose not, say friends $v_{i}$ and $v_{i+1}$ are enemies but they sit next to each other. This is a contradiction because there will be no edge between $v_i$ and $v_{i+1}$ in $G$ if friends $v_i$ and $v_{i+1}$  are enemies. Therefore, arranging friends in the order of $v_1, v_2, ..., v_n, v_1$ gives a solution to \texttt{Frenemies}.
+
+\item "$\Leftarrow$" Suppose arranging friends in the order of $v_1, v_2, ..., v_n, v_1$ is a solution to \texttt{Frenemies}. Since for sure $v_1, v_2, ..., v_n, v_1$ contains all the vertices in $G$, we just need to prove that it is a cycle in $G$.  If not, there exists an edge $(v_i, v_{i+1}) \notin E$, i.e.,  $(v_i, v_{i+1}) \in E_c$, which means friends $v_i$ and $v_{i+1}$ are enemies and they are sitting next to each other. This contradicts with the fact that arranging friends in the order of $v_1, v_2, ..., v_n, v_1$ is a solution to \texttt{Frenemies}. So $v_1, v_2, ..., v_n, v_1$ is a Hamiltonian cycle in $G$. 
+\end{itemize} 
+Therefore, we proved that \texttt{Frenemies} is NP-complete.
+\end{itemize}
 \end{tcolorbox}
 
 \section{Let's go hiking [26 pts]}
@@ -88,7 +110,7 @@ Alex and Baine go hiking together. They bring a bag of items and want to divide 
 	\item (8 pts) The bag contains $n$ items of two weights: 1lb and 2lb. Alex and Baine want to divide the items evenly so that they carry the same amount of weight. 
 	
 \begin{tcolorbox}
-{\bf Solution:}
+{\bf Solution:} This problem can be solved in poly
 \end{tcolorbox}
 	
 	\item (9 pts) The bag contains $n$ items of different weights. Again they want to divide the items evenly. 
