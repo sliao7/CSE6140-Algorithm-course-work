@@ -18,7 +18,7 @@
 
 
 \title{CSE 6140 / CX 4140 Assignment 3\\due Oct 16, 2020 at 11:59pm on Canvas }
-\author{}
+\author{Shasha Liao}
 \date{}
 \begin{document}
 \maketitle
@@ -76,7 +76,7 @@ We know the {\em Vertex Cover} problem is NP-complete.
 This completes the proof of {\em Vertex Cover}  $ \leq_{p}$ {\em Dominating Set}.
 \end{itemize}
 \end{tcolorbox}
-
+\newpage
 \section{Frenemies [12 pts]} 
 
 Assume you are planning a dinner party and going to invite a set of friends. However, among them, there are some pairs of persons who are enemies. You need to create a seating plan and you are wondering if it is possible to arrange this set of $n$ friends of yours around a round table such that none of the two enemies will seat next to each other. Given the set of the $n$ friends and the set of the pairs of enemies, prove that this problem is NP-Complete. Remember to follow the steps from lecture to prove NP-completeness.
@@ -103,26 +103,64 @@ A potential solution would be $L = \{a_1, a_2, ..., a_n\}$, which should be a pe
 Therefore, we proved that \texttt{Frenemies} is NP-complete.
 \end{itemize}
 \end{tcolorbox}
-
+\newpage
 \section{Let's go hiking [26 pts]}
 Alex and Baine go hiking together. They bring a bag of items and want to divide them up. For the following scenarios, decide whether the problem can be solved in polynomial time. If yes, give a polynomial-time algorithm; otherwise prove the problem is NP-complete. 
 \begin{itemize}
 	\item (8 pts) The bag contains $n$ items of two weights: 1lb and 2lb. Alex and Baine want to divide the items evenly so that they carry the same amount of weight. 
 	
 \begin{tcolorbox}
-{\bf Solution:} This problem can be solved in poly
+{\bf Solution:} This problem can be solved in constant time. Suppose there are $n_1$ items of 1lb and $n_2$ items of 2lb with $n_1 + n_2 = n$. There are three different cases: 
+\begin{itemize}
+\item Case 1: $n_1$ is odd. \\
+There is no way for Alex and Baine to divide the items evenly since the total number of weights is odd.
+\item Case 2: $n_1$ and $n_2$ are both even. \\
+Alex and Baine can divide the items evenly simply by each of them taking $n_1/2$ items of 1lb and $n_2/2$ items of 2lb.
+\item Case 3: $n_1$ is even but $n_2$ is odd. \\
+If $n_1 = 0$, there is no way to divide the items evenly. Otherwise, they can divide the items evenly by treating 2 items of 1lb as 1 item of 2lb and reduce the problem to Case 2.
+\end{itemize}
 \end{tcolorbox}
-	
+\newpage	
 	\item (9 pts) The bag contains $n$ items of different weights. Again they want to divide the items evenly. 
 \begin{tcolorbox}
-{\bf Solution:}
-\end{tcolorbox}
-
-	\item (9 pts) The bag contains $n$ items of different weights. They want to divide the items such that the weight difference of items they carry is less than 10lbs. 
+{\bf Solution:} Denoting this problem by $Y$, we can prove that it is NP-complete by showing $\texttt{Subset Sum} \leq_p  Y$.
+\begin{itemize}
+\item Step 1: Prove that $Y$ is in NP. \\
+Suppose the bag contains $n$ items of weights $\{w_1, w_2, ..., w_n\}$. A potential solution would be that Alex carries a subset of items with weights $\{w_{k_1}, w_{k_2}, ..., w_{k_p} \}$ where $0 < p < n$, and Baine carries the rest of the items. To check if it is a correct solution, we only need to check if $\sum_{i=1}^p w_{k_i} = \frac {\sum_{i=1}^n w_i }{2}$, which takes $O(n)$ time.
+\item Step2: Choose an NP-complete problem:  \texttt{Subset Sum}. \\
+ \texttt{Subset Sum}: given natural numbers $w_1, w_2, ..., w_n$ and a target $W$, dose there exist a subset of $\{w_1, w_2, ..., w_n\}$ that adds up to exactly $W$?
+ 
+\item Step 3: Prove that $\texttt{Subset Sum} \leq_p  Y$.
+\begin{itemize}
+\item Reduction: given an instance $(w_1, w_2, ..., w_n, W)$ of \texttt{Subset Sum}, we can create an instance of $Y$ as this: the bag contains $n+1$ items of weights $\{w_1, w_2, ..., w_n, w_{n+1}\}$ with $$w_{n+1} = \sum_{i=1}^n w_i - 2W.$$ We will show that if the  \texttt{Subset Sum} problem has a solution $\{w_{k_1}, w_{k_2}, ..., w_{k_p}\}$, then we can divide $n+1$ items of weights $\{w_1, w_2, ..., w_n, w_{n+1}\}$ evenly by taking one part as $\{w_{k_1}, w_{k_2}, ..., w_{k_p}, w_{n+1}\}$, and the rest as the other part.
+\item "$\Rightarrow$" If $\{w_{k_1}, w_{k_2}, ..., w_{k_p} \}$ is a solution to the \texttt{Subset Sum} problem, i.e., $\sum_{i=1}^p w_{k_i} = W$. Then we have $$\sum_{i=1}^p w_{k_i} + w_{n+1} = W + (\sum_{i=1}^n w_i - 2W) = \sum_{i=1}^n w_i - W = \frac{\sum_{i=1}^n w_i + w_{n+1}}{2}.$$ So $\{w_{k_1}, w_{k_2}, ..., w_{k_p}, w_{n+1}\}$ is a solution to our problem $Y$. 
+\item "$\Leftarrow$" If $\{w_{k_1}, w_{k_2}, ..., w_{k_p}, w_{n+1}\}$ is a solution to our problem $Y$, then $$\sum_{i=1}^p w_{k_i} + w_{n+1} =  \frac{\sum_{i=1}^n w_i + w_{n+1}}{2}.$$ So $$\sum_{i=1}^p w_{k_i} =  \frac{\sum_{i=1}^n w_i + w_{n+1}}{2} - w_{n+1} =   \frac{\sum_{i=1}^n w_i - w_{n+1}}{2} = W.$$ This proved that $\{w_{k_1}, w_{k_2}, ..., w_{k_p} \}$ is a solution to the \texttt{Subset Sum} problem.
 \end{itemize}
-\begin{tcolorbox}
-{\bf Solution:}
+\end{itemize}
+Therefore, $\texttt{Subset Sum} \leq_p  Y$ and $Y$ is NP-complete.
 \end{tcolorbox}
+\newpage
+	\item (9 pts) The bag contains $n$ items of different weights. They want to divide the items such that the weight difference of items they carry is less than 10lbs. 
+\begin{tcolorbox}
+{\bf Solution:} Denoting this problem by $Z$, we can prove that it is NP-complete by showing $\texttt{Subset Sum} \leq_p  Z$.
+\begin{itemize}
+\item Step 1: Prove that $Z$ is in NP. \\
+Suppose the bag contains $n$ items of weights $\{w_1, w_2, ..., w_n\}$. A potential solution would be that Alex carries a subset of items with weights $\{w_{k_1}, w_{k_2}, ..., w_{k_p} \}$ where $0 < p < n$, and Baine carries the rest of the items. To check if it is a correct solution, we only need to check if $\frac {M- 10 }{2} < \sum_{i=1}^p w_{k_i} < \frac {M+ 10 }{2}$ with $M = \sum_{i=1}^n w_i $, which takes $O(n)$ time.
+\item Step2: Choose an NP-complete problem:  problem $Y$ in the previous part. \\
+ $Y$: The bag contains $n$ items of different weights with each weight being a natural number. Alex and Baine want to divide the items evenly.  
+\item Step 3: Prove that $Y \leq_p  Z$.
+\begin{itemize}
+\item Reduction: given an instance $\{w_1, w_2, ..., w_n\}$ of $Y$, we can create an instance of $Z$ as this: the bag contains $n$ items of weights $\{w'_1, w'_2, ..., w'_n\}$ with $$w'_{i} = 11 \times w_i.$$ We will show that if problem $Y$ has a solution $\{w_{k_1}, w_{k_2}, ..., w_{k_p}\}$ iff problem $Z$ has a solution $\{w'_{k_1}, w'_{k_2}, ..., w'_{k_p}\}$.
+
+\item "$\Rightarrow$" If $\{w_{k_1}, w_{k_2}, ..., w_{k_p} \}$ is a solution to problem $Y$, i.e., $\sum_{i=1}^p w_{k_i} = \frac {M }{2}$ with $M = \sum_{i=1}^n w_i $. Then we have $$\sum_{i=1}^p w'_{k_i} = \sum_{i=1}^p 11w_{k_i}= \frac{11M}{2} = \frac{\sum_{i=1}^n 11w_i}{2} = \frac{M'}{2}$$ with $M' = \sum_{i=1}^n w'_i = 11M$. Since $\sum_{i=1}^p w'_{k_i} = \frac{M'}{2} \in ( \frac {M' - 10 }{2}, \frac {M'+ 10 }{2} )$, we know $\{w'_{k_1}, w'_{k_2}, ..., w'_{k_p}\}$ is a solution to our problem $Z$. 
+
+\item "$\Leftarrow$" If $\{w'_{k_1}, w'_{k_2}, ..., w'_{k_p}\}$ is a solution to our problem $Z$, then $$\sum_{i=1}^p w_{k_i}=\frac{1}{11}  \sum_{i=1}^p w'_{k_i} \in (  \frac {M' - 10 }{22}, \frac {M'+ 10 }{22} ) = (\frac{M}{2} - \frac{10}{22}, \frac{M}{2} + \frac{10}{22}).$$ So $$\sum_{i=1}^p w_{k_i} =  \frac{M}{2}.$$ This proved that $\{w_{k_1}, w_{k_2}, ..., w_{k_p} \}$ is a solution to problem $Y$. 
+\end{itemize}
+\end{itemize}
+Therefore, $Y \leq_p  Z$ and $Z$ is NP-complete.
+\end{tcolorbox}
+\end{itemize}
+
 
 \textbf{Hint}: Recall Subset Sum problem: given a set $X$ of integers and a target number $t$, find a subset $Y\subset X$ such that the members of $Y$ add up to exactly $t$. 
 
