@@ -1,0 +1,117 @@
+rmat0406.gr rmat0406
+./data/rmat0406.gr
+
+Number of vertices and edges: 16 64
+
+
+Number of extra edges: 1000
+
+
+rmat0507.gr rmat0507
+./data/rmat0507.gr
+
+Number of vertices and edges: 32 128
+
+
+Number of extra edges: 1000
+
+
+rmat0608.gr rmat0608
+./data/rmat0608.gr
+
+Number of vertices and edges: 64 259
+
+
+Number of extra edges: 1000
+
+
+rmat0709.gr rmat0709
+./data/rmat0709.gr
+
+Number of vertices and edges: 128 530
+
+
+Number of extra edges: 1000
+
+
+rmat0810.gr rmat0810
+./data/rmat0810.gr
+
+Number of vertices and edges: 256 1054
+
+
+Number of extra edges: 1000
+
+
+rmat0911.gr rmat0911
+./data/rmat0911.gr
+
+Number of vertices and edges: 512 2183
+
+
+Number of extra edges: 1000
+
+
+rmat1012.gr rmat1012
+./data/rmat1012.gr
+
+Number of vertices and edges: 1024 4411
+
+
+Number of extra edges: 1000
+
+
+rmat1113.gr rmat1113
+./data/rmat1113.gr
+
+Number of vertices and edges: 2048 9875
+
+
+Number of extra edges: 1000
+
+
+rmat1214.gr rmat1214
+./data/rmat1214.gr
+
+Number of vertices and edges: 4096 29779
+
+
+Number of extra edges: 1000
+
+
+rmat1315.gr rmat1315
+./data/rmat1315.gr
+
+Number of vertices and edges: 8192 106361
+
+
+Number of extra edges: 1000
+
+
+rmat1416.gr rmat1416
+./data/rmat1416.gr
+
+Number of vertices and edges: 16384 372670
+
+
+Number of extra edges: 1000
+
+
+rmat1517.gr rmat1517
+./data/rmat1517.gr
+
+Number of vertices and edges: 32768 1770677
+
+
+Number of extra edges: 1000
+
+
+rmat1618.gr rmat1618
+./data/rmat1618.gr
+
+Number of vertices and edges: 65536 7926934
+
+
+Number of extra edges: 1000
+
+
