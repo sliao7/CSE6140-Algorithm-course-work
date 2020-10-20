@@ -1,7 +1,7 @@
 # CSE6140-course-work
 Include all the homework problems and projects for CSE 6140 Algorithm. 
 
-## HW1 [report](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW1/report.pdf)
+## HW1: Gready Algorithm [ report ](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW1/report.pdf)
 ### 1. Big-O time Complexity
 ### 2. Algorithm Design and Complexity Analysis (Box Throwing)
 ### 3. Greedy - Points on a 2D plane
@@ -24,7 +24,7 @@ Include all the homework problems and projects for CSE 6140 Algorithm.
 
 * Time complexity: O(n log n)
 
-## HW2 [report](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/report.pdf)
+## HW2: Dynamic Programing and Minimum Spanning Tree [ report ](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/report.pdf)
 ### 1. Dynamic Programming: Atlanta MARTA
 * Designed a DP algorithm [(code)](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/Python/dp_tickets.py) to find an n days purchase plan that minimizes the amount of money for a commuting plan.
 
@@ -49,7 +49,7 @@ Include all the homework problems and projects for CSE 6140 Algorithm.
 #### Report:
 * Analyzied theoretical complexity for the two algoritms **computeMST** and **recomputeMST** and compared the theoretical results with the experimental results. See the [report](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/report.pdf) on page 7.
 
-## HW3[report](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW3/report.pdf)
+## HW3: NP-complete Problems [ report ](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW3/report.pdf)
 ### 1. Dominating set
 * Problem: Given a large network of workstations modeled as a graph G, and a number k, is there a way to place k copies of the database at k different nodes so that every node either has a copy of the database or is connected by a direct link to a node that has a compy of the database?
 * Proved that the Dominating Set Problem is NP-complete.
