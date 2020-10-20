@@ -1,5 +1,7 @@
 # CSE6140-course-work
-Include all the code I designed for CSE6140 including all the homework problems and the projects. 
+Include all the homework problems and projects for CSE 6140 Algorithm. 
+
+## [HW1](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW1/report.pdf)
 
 MST: 
 1, Construct a weighted undirected graph from a file of vertices and edges
