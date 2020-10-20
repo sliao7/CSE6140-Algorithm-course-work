@@ -37,10 +37,21 @@ Include all the homework problems and projects for CSE 6140 Algorithm.
 
 ### 3. Minimum Spanning Tree [code](https://github.com/sliao7/CSE6140-Algorithm-course-work/tree/master/HW2/MST)
 
-* Designed two data structuress, **vertex** object and **graph** object to make it very cheap (constant time) and convenient to add, search, and remove edeges in a graph.
+* Designed two data structuress, [**vertex** object and **graph** object](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/MST/src/graph.py) to make it very cheap (constant time) and convenient to add, search, and remove edeges in a graph.
 #### Static Computation: find an MST and compute the cost
-* Implemented Prim's Algorithm in the function [**computeMST**](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/MST/src/run_experiments.py) to find the MST and compute the cost of the MST in a given weighted graph file. 
+* Implemented Prim's Algorithm in the function [**computeMST**](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/MST/src/run_experiments.py) to find the MST and compute the cost of the MST in [given weighted graph data files](https://github.com/sliao7/CSE6140-Algorithm-course-work/tree/master/HW2/MST/data). 
 #### Dynamic Recomputation: update the cost of the MST given new edges added
 * Applied BFS in the function [**max_edge**](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/MST/src/graph.py) to find the maximum weighted edge between two vertices in a graph.
-* Implemented the function [**recomputeMST**] to computes the new MST given the new edge to be added into the graph.
+* Implemented the function [**recomputeMST**](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/MST/src/run_experiments.py) to computes the new MST given the new edge to be added into the graph.
+#### Experiemtns: 
+* ran my code for all 13 input RMAT graphs [[1]](#1), which are synthetic graphs with power-low degree distributions and small-world characteristics. 
+#### Report:
+* Analyzied theoretical complexity for the two algoritms **computeMST** and **recomputeMST** and compared the theoretical results with the experimental results. See the [report](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW2/report.pdf) on page 7.
+
+## References
+<a id="1">[1]</a> 
+D. Chakrabarti, Y. Zhan, and C. Faloutsos.
+R-MAT: A Recursive Model for Graph Mining.
+Proc. 4th SIAM Intl. Conf. on Data Mining.
+Florida, USA, April 2004.
 
