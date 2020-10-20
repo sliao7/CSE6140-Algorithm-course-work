@@ -1,0 +1,36 @@
+=>PYTHONTEX#py#default#defaultverb#0#verbatim#####103#
+Memo = [0]*365
+def OPT(i):
+    if i <= 0:
+        return 0
+    if Memo[i] == 0:
+        if i not in days:
+            Memo[i] = OPT(i-1)
+        else:
+            Memo[i] = min(OPT(i-1) + ticket[0], OPT(i-7) + ticket[1], OPT(i-30) + ticket[2])
+    return Memo[i]
+=>PYTHONTEX:SETTINGS#
+version=0.16
+outputdir=pythontex-files-HW2
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python|
+pygfamily=pylabcon|pycon|
