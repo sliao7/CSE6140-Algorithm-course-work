@@ -60,7 +60,7 @@ Include all the homework problems and projects for CSE 6140 Algorithm.
 
 ### 3. Let's go hiking
 * Problem: Given a bag containning n items of different weights. Can we divide the items evenly into two groups so that each of them has the same amount of weight? Moreover, can we divide the items such tha the weight difference of items of the two groups is less than 10lbs.
-* Proved both the two problems are NP-complete.
+* Proved that both the two problems are NP-complete.
 
 ## References
 <a id="1">[1]</a> 
