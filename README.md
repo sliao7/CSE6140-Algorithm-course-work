@@ -1,5 +1,6 @@
 # CSE6140-course-work
-Include all the homework problems and projects for CSE 6140 Algorithm. 
+* Include all the homework problems and projects for CSE 6140 Algorithm.
+* Check the slides [here](https://github.com/sliao7/CSE6140-Algorithm-course-work/tree/master/slides)
 
 ## HW1: Gready Algorithm [ report ](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/HW1/report.pdf)
 ### 1. Big-O time Complexity
