@@ -40,9 +40,9 @@ Week11 - Lecture 1: Coping with NP-completeness 2: branch and bound (BnB) [Slide
 
 Week11 - Test 2 (10-28) Scope: everything covered in the lectures from the Dynamic Programming chapter till (and including) the lecture uploaded on Oct. 20th.
 
-Week12 - Lecture 1:  Branch and bound (BnB), Local Search [Slides-11-02]((https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-02.pdf))
+Week12 - Lecture 1:  Branch and bound (BnB), Local Search [Slides-11-02](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-02.pdf)
 
-Week12 - Lecture 2: Local Search, Empirical Analysis of Algorithms (QRTD plots) [Slides-11-03]((https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-03.pdf))
+Week12 - Lecture 2: Local Search, Empirical Analysis of Algorithms (QRTD plots) [Slides-11-03](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-03.pdf)
 
 Week13 - Lecture 1: Local Search; Approximation Algorithms - Load Balancing  Slides-11-09
 
