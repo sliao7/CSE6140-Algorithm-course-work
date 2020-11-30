@@ -44,9 +44,9 @@ Week12 - Lecture 1:  Branch and bound (BnB), Local Search [Slides-11-02](https:/
 
 Week12 - Lecture 2: Local Search, Empirical Analysis of Algorithms (QRTD plots) [Slides-11-03](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-03.pdf)
 
-Week13 - Lecture 1: Local Search; Approximation Algorithms - Load Balancing  Slides-11-09
+Week13 - Lecture 1: Local Search; Approximation Algorithms - Load Balancing  [Slides-11-09](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-09.pdf)
 
-Week13 - Lecture 2: Approximation Algorithms - Clustering (Center Selection) Slides-11-10
+Week13 - Lecture 2: Approximation Algorithms - Clustering (Center Selection) [Slides-11-10](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-10.pdf)
 
 Week14 - Lecture 1: Approximation Algorithm; More on Empirical Analysis (theory, background) Slides-11-19
 
