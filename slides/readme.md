@@ -48,10 +48,10 @@ Week13 - Lecture 1: Local Search; Approximation Algorithms - Load Balancing  [Sl
 
 Week13 - Lecture 2: Approximation Algorithms - Clustering (Center Selection) [Slides-11-10](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-10.pdf)
 
-Week14 - Lecture 1: Approximation Algorithm; More on Empirical Analysis (theory, background) Slides-11-19
+Week14 - Lecture 1: Approximation Algorithm; More on Empirical Analysis (theory, background) [Slides-11-16](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-16.pdf)
 
-Week14 - Lecture 2: Approximation Algorithm for TSP, ILP Slides-11-17
+Week14 - Lecture 2: Approximation Algorithm for TSP, ILP [Slides-11-17](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-17.pdf)
 
-Week15 - Lecture 1:  Review  Slides-11-23
+Week15 - Lecture 1:  Review  [Slides-11-23](https://github.com/sliao7/CSE6140-Algorithm-course-work/blob/master/slides/Slides-11-23.pdf)
 
 Week15 - Test 3 (12-02) 
